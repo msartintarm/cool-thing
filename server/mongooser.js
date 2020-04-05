@@ -1,15 +1,11 @@
-const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const app = express();
+
+const config = require("./env/config");
 
 /**
  * A wrapper around Mongoose APIs which delegates to them 
  *  whilst encapsulating config info
  */
-
-// DB Config
-const mongoUri = "mongodb://gameAdmin:gameAdminPass@127.0.0.1:27017/game?authSource=admin";
 
 function handleMongoInitSuccess() {
     console.log("MongoDB successfully connected");
@@ -24,7 +20,7 @@ function connectToMongoDb (successFn, failureFn) {
 mongoose.set("bufferCommands", false);
 mongoose
   .connect(
-    mongoUri,
+    config.MONGO_URI,
       { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(successFn)

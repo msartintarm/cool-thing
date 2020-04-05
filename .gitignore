@@ -105,3 +105,5 @@ dist
 
 # Emacs temp files
 *~
+
+env/
