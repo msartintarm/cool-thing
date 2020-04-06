@@ -12,7 +12,8 @@ function handleMongoInitSuccess() {
 }
 
 function handleMongoInitError(err) {
-    console.error(err);
+    //    console.error(err);
+    console.error("Mongo init failed :(");
 }
 
 // Bodyparser middleware
