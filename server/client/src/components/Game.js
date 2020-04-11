@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import Unity, {UnityContent} from "react-unity-webgl";
 
 const unityContent = new UnityContent(
-    "src/unity/web_build.json",
-    "src/unity/UnityLoader.js"
+    "unity/web_build.json",
+    "unity/UnityLoader.js"
 ); 
  
 class Game extends Component {
@@ -11,8 +11,13 @@ class Game extends Component {
     constructor(props) {
 	super(props);
 	this.state = {gameIsOpen: false};
+	this.changeGameOpenStateOnClick = this.changeGameOpenStateOnClick.bind(this);
     }
 
+    changeGameOpenStateOnClick() {
+	this.setState({gameIsOpen: !this.state.gameIsOpen});
+    }
+    
     render() {
 	return (
 		<div>
@@ -23,19 +28,17 @@ class Game extends Component {
 	);
     }
 
-    changeGameOpenStateOnClick() {
-	this.setState({gameIsOpen: !this.state.gameIsOpen});
-    }
-    
     renderButton() {
 	const buttonText = this.state.gameIsOpen? "Hide Game": "Show Game";
-	return <button onClick={this.changeGameOpenStateOnClick.bind(this)}>
+	return <button onClick={this.changeGameOpenStateOnClick}>
 	    {buttonText}
 	</button>;
     }
 
     renderGame() {
-	return <Unity unityContent={unityContent} />;
+	return <div>
+	    <Unity unityContent={unityContent} />
+	    </div>;
     }
 }
 

@@ -1,30 +1,31 @@
-import React, {Component} from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import React from "react";
+import { Link, useRouteMatch } from "react-router-dom";
+import './Footer.css';
 
-class Footer extends Component {
-    render() {
-	return (
-		<div>
-		<p>
-		<Switch>
-		<Route exact path="/">
-		<Link to="/game">Check out the game</Link>
-		<br/>
-		<Link to="/about">About the site</Link>
-		</Route>
-		<Route exact path="/game">
-		<Link to="/">Check out the intro</Link>
-		</Route>
-		<Route exact path="/about">
-		<Link to="/">Check out the intro</Link>
-		<br/>
-		<Link to="/game">Check out the game</Link>
-		</Route>
-		</Switch>
-		</p>
-		</div>
-	);
-    }
+const DISABLED_CLASS = "FooterLinkDisabled";
+
+function Footer() {
+    const gameClass = useRouteMatch("/game")? DISABLED_CLASS: "";
+    const aboutClass = useRouteMatch("/about")? DISABLED_CLASS: "";
+    const introClass = useRouteMatch("/").isExact? DISABLED_CLASS: "";
+
+    return (
+	    <div>
+	    <p>
+	    {renderLink("/", introClass, "Check out the intro")}
+	    <br/>
+	    {renderLink("/game", gameClass, "Check out the game")}
+	    <br/>
+	    {renderLink("/about", aboutClass, "About the site")}
+	    </p>
+	    </div>
+    );
+}
+
+function renderLink(uri, cssClass, content) {
+    return <span className={cssClass}>
+	<Link to={uri}>{content}</Link>
+	</span>;
 }
 
 export default Footer;

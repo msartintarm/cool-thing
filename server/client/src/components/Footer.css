@@ -1,0 +1,12 @@
+.FooterLinkDisabled {
+    opacity: 0.5;
+    cursor: initial;
+}
+
+.FooterLinkDisabled > a {
+    color: currentColor;
+    display: inline-block;
+    pointer-events: none;
+    text-decoration: none;
+}
+
