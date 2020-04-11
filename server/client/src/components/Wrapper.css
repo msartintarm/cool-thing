@@ -1,3 +1,45 @@
 .Wrapper {
-  background-color: grey;
+    position: relative;
+    background-color: #111111;
+    margin: 2%;
+    overflow: hidden;
+}
+
+.WrapperTitle,
+.WrapperParag {
+    max-width: 370px;
+}
+
+.WrapperBackground {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.WrapperContent {
+    position: relative;
+    text-align: left;
+    padding-top: 240px;
+    padding-bottom: 509px;
+    padding-left: 270px;
+}
+
+.WrapperBanner {
+    /*    display: block; */
+}
+
+.WrapperScroll {    
+    flex-grow: 1;
+}
+
+.WrapperSection {
+    line-height: 0;
+    min-width: 900px;
+    display: flex;
+    justify-content: space-between;
 }
