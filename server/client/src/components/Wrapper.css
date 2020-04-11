@@ -39,7 +39,14 @@
 
 .WrapperSection {
     line-height: 0;
-    min-width: 900px;
+    min-width: 600px;
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+.WrapperSection {
+}
 }

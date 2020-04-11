@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import { Link } from "react-router-dom";
 
 import './Wrapper.css';
 import Scroll1 from './scrollz/scroll1.png';
