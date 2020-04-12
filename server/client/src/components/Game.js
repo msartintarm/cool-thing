@@ -20,10 +20,10 @@ class Game extends Component {
     
     render() {
 	return (
-		<div>
-		<p>This is the cool game!</p>
-		{this.renderButton()}
-	    {this.state.gameIsOpen && this.renderGame()}
+	    <div>
+	      <p>This is the cool game!</p>
+	      {this.renderButton()}
+	      {this.state.gameIsOpen && this.renderGame()}
 	    </div>
 	);
     }
@@ -31,14 +31,14 @@ class Game extends Component {
     renderButton() {
 	const buttonText = this.state.gameIsOpen? "Hide Game": "Show Game";
 	return <button onClick={this.changeGameOpenStateOnClick}>
-	    {buttonText}
+	  {buttonText}
 	</button>;
     }
 
     renderGame() {
 	return <div>
-	    <Unity unityContent={unityContent} />
-	    </div>;
+	  <Unity unityContent={unityContent} />
+	</div>;
     }
 }
 

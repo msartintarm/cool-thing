@@ -10,22 +10,25 @@ function Footer() {
     const introClass = useRouteMatch("/").isExact? DISABLED_CLASS: "";
 
     return (
-	    <div>
+	<div className="FooterContainer">
+	  <div className="FooterSpacer"></div>
+	  <div className="FooterContent">
 	    <p>
-	    {renderLink("/", introClass, "Check out the intro")}
-	    <br/>
-	    {renderLink("/game", gameClass, "Check out the game")}
-	    <br/>
-	    {renderLink("/about", aboutClass, "About the site")}
+	      {renderLink("/", introClass, "Check out the intro")}
+	      <br/>
+	      {renderLink("/game", gameClass, "Check out the game")}
+	      <br/>
+	      {renderLink("/about", aboutClass, "About the site")}
 	    </p>
-	    </div>
+	  </div>
+	</div>
     );
 }
 
 function renderLink(uri, cssClass, content) {
     return <span className={cssClass}>
-	<Link to={uri}>{content}</Link>
-	</span>;
+      <Link to={uri}>{content}</Link>
+    </span>;
 }
 
 export default Footer;

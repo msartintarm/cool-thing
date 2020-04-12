@@ -10,3 +10,16 @@
     text-decoration: none;
 }
 
+.FooterContainer {
+    position: relative;
+}
+
+.FooterSpacer {
+    height: 2px;
+}
+
+.FooterWrapper {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}

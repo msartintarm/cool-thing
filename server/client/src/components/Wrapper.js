@@ -17,19 +17,19 @@ import Scroll9 from './scrollz/scroll9.png';
 class Wrapper extends Component {
     render() {
 	return (
-		<div className="Wrapper">
+	    <div className="Wrapper">
 
-		<div className="WrapperBackground">
+	      <div className="WrapperBackground">
 		{WrapperSection(Scroll1, Scroll2, Scroll3)}
-	    {WrapperSection(Scroll7, Scroll8, Scroll9, " WrapperScroll")}
-	    {WrapperSection(Scroll4, Scroll5, Scroll6)}
-		</div>
+		{WrapperSection(Scroll7, Scroll8, Scroll9, " WrapperScroll")}
+		{WrapperSection(Scroll4, Scroll5, Scroll6)}
+	      </div>
 
-		<div className="WrapperContent">
+	      <div className="WrapperContent">
 		<div className="WrapperTitle">{this.props.title}</div>
 		<div className="WrapperParag">{this.props.content1}</div>
-		</div>
-		</div>
+	      </div>
+	    </div>
 	);
     }
 }
@@ -38,16 +38,16 @@ class Wrapper extends Component {
 
 function WrapperSection(sectionL, sectionCenter, sectionR, extraClasses="") {
     return <div className={`WrapperSection${extraClasses}`}>
-	{WrapperBannerImage(sectionL)}
-    {WrapperBannerImage(sectionCenter, " WrapperScroll")}
-    {WrapperBannerImage(sectionR)}
+      {WrapperBannerImage(sectionL)}
+      {WrapperBannerImage(sectionCenter, " WrapperScroll")}
+      {WrapperBannerImage(sectionR)}
     </div>;
 }
 
 function WrapperBannerImage(content, extraClasses="") {
     return <img className={`WrapperBanner${extraClasses}`}
-    alt=""
-    src={content}
+		alt=""
+		src={content}
     />;
 }
 

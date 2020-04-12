@@ -11,33 +11,33 @@ import About from "./components/About";
 
 function App() {
     return (
-	    <div className="App">
-	    <Router>
+	<div className="App">
+	  <Router>
 	    <Wrapper
-	title={Title()}
-	content1={
+	    title={Title()}
+	    content1={
 		<>
-		<Switch>
-		<Route exact path="/"><Intro /></Route>
-		<Route exact path="/game"><Game /></Route>
-		<Route exact path="/about"><About /></Route>
-		</Switch>
-		<Footer/>
+		  <Switch>
+		    <Route exact path="/"><Intro /></Route>
+		    <Route exact path="/game"><Game /></Route>
+		    <Route exact path="/about"><About /></Route>
+		  </Switch>
+		  <Footer/>
 		</>
-	}/>
-	    </Router>
-	    </div>
+	    }/>
+	  </Router>
+	</div>
     );
 }
 
 function Title() {
     return <h1>
-	<Switch>
+      <Switch>
 	<Route exact path="/">Hello</Route>
 	<Route exact path="/game">Game</Route>
 	<Route exact path="/about">About</Route>
-	</Switch>
-	</h1>;
+      </Switch>
+    </h1>;
 }
 
 export default App;
