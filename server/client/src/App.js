@@ -24,7 +24,7 @@ class App extends React.Component {
 	    <div className="App">
 	      <Router>
 		<Wrapper
-		    title={Title()}
+		    title={!this.state.gameExpanded && Title()}
 		    scale={this.state.wrapperScale}
 		    content1={
 			<>
@@ -35,7 +35,7 @@ class App extends React.Component {
 			    </Route>
 			    <Route exact path="/about"><About /></Route>
 			  </Switch>
-			  <Footer/>
+			  {!this.state.gameExpanded && <Footer/>}
 			</>
 		    }/>
 	      </Router>

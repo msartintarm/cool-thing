@@ -1,0 +1,28 @@
+.GameBannerContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.GameInitButton {
+    margin: 0 20px;
+    padding: 0 20px;
+    flex-grow: 1;
+    border: none;
+    background: #333;
+    color: #ddd;
+}
+
+.GameDescription {
+    flex-grow: 0;
+}
+
+.GameContainerOpen {
+    width: 80%;
+    margin-top: -105px;
+}
+
+.UnityContainer {
+    width: 800px;
+    height: 600px;
+    margin: 10px auto;
+}

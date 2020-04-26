@@ -1,7 +1,8 @@
 .Wrapper {
     position: relative;
     background-color: #111111;
-    margin: 2%;
+    max-width: 1200px;
+    margin: auto;
     overflow: hidden;
 }
 
@@ -42,7 +43,6 @@
     min-width: 600px;
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
     width: 100%;
 }
 

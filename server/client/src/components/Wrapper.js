@@ -28,8 +28,6 @@ class Wrapper extends Component {
     }
     
     render() {
-	console.log("Con");
-	console.log(JSON.stringify(this.state.imgDim));
 	return (
 	    <div className="Wrapper">
 
@@ -66,10 +64,7 @@ class Wrapper extends Component {
     shrinkSelf(newScale) {
 	const initialDimensions = this.state.initialImageDimensions
 			       || getImageDimensions(this.imageEls_);
-	console.log("INITIALNEW");
-	console.log(JSON.stringify(initialDimensions));
 	const newDimensions = scaleDimensions(initialDimensions, newScale);
-	console.log(JSON.stringify(newDimensions));
 	
 	this.setState({
 	    initialImageDimensions: initialDimensions,
