@@ -12,10 +12,6 @@
     color: #ddd;
 }
 
-.GameDescription {
-    flex-grow: 0;
-}
-
 .GameContainerOpen {
     width: 80%;
     margin-top: -105px;
