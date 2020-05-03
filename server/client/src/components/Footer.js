@@ -16,6 +16,7 @@ function Footer(props) {
 		<br/>
 	      </span>
 	  )}
+	  ©2020 Michael Sartin-Tarm - All Rights Reserved
 	</p>
       </div>
     </div>);

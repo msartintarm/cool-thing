@@ -7,7 +7,7 @@ import Wrapper from "./components/Wrapper";
 
 import Intro from "./components/Intro";
 import UnityGame from "./components/UnityGame";
-import PhaserGame from "./components/UnityGame";
+import PhaserGame from "./components/PhaserGame";
 import About from "./components/About";
 
 class App extends React.PureComponent {
@@ -25,10 +25,11 @@ class App extends React.PureComponent {
 	    <h1>
 	      <Switch>
 		{[
-		     ["/", "Hello"],
-		     ["/game", "Game"],
-		     ["/about","About"],
-		].map(([link, text]) => (<Route exact path={link}>{text}</Route>))}
+		     ["/", "Hello there"],
+		     ["/game", "Unity game"],
+		     ["/game2", "Phaser game"],
+		     ["/about","About site"],
+		].map(([link, text]) => (<Route key={link} exact path={link}>{text}</Route>))}
 	      </Switch>
 	    </h1>;
 	
@@ -70,15 +71,17 @@ class App extends React.PureComponent {
 /// Define the link mapping at the application level, not within the footer level
 function FooterWithLinks() {
     // useRouteMatch is a 'react hook', and thus must obey certain constraints such as no dynamic inputs
-    const [_, matchingLink] = [
+    const [, matchingLink] = [
 	["/", useRouteMatch("/").isExact],
 	["/about", useRouteMatch("/about")],
 	["/game", useRouteMatch("/game")],
-    ].find(([_, isMatch]) => isMatch);
+	["/game2", useRouteMatch("/game2")],
+    ].find(([, isMatch]) => isMatch);
     
     const footerLinks = new Map([
 	["/", "Check out the intro"],
-	["/game", "Check out the game"],
+	["/game", "Check out the Unity game"],
+	["/game2", "COMING SOON: Check out the Phaser game"],
 	["/about", "About the site"],
     ]);
     return (<Footer linkz={footerLinks} currLink = {matchingLink}/>);

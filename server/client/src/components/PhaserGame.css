@@ -1,0 +1,24 @@
+.PhaserGameBannerContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.PhaserGameInitButton {
+    margin: 0 20px;
+    padding: 0 20px;
+    flex-grow: 1;
+    border: none;
+    background: #333;
+    color: #ddd;
+}
+
+.PhaserGameContainerOpen {
+    width: 80%;
+    margin-top: -105px;
+}
+
+.PhaserContainer {
+    width: 800px;
+    height: 600px;
+    margin: 10px auto;
+}

@@ -106,4 +106,7 @@ dist
 # Emacs temp files
 *~
 
+# Some other editor's temp files
+*\#
+
 env/
