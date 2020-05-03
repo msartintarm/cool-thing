@@ -21,17 +21,20 @@ class PhaserGame extends Component {
 
 // Manages the lifecycle of the Phaser game; game will be created when component is rendered
 class PhaserGameInstance extends Component {
-    constructor(props) {
-	super(props);
-    }
-
     componentDidMount() {
-	this.gameContent_ = new PhaserGameContent({
-	    title: "Starfall",
+	this.gameContent_ = new PhaserGameContent(/** config= */{
+	    title: "PhaserGame",
 	    width: 800,
 	    height: 600,
 	    parent: "PhaserContainer",
 	    backgroundColor: "#18216D",
+	    scene: [PhaserGameScene],
+	    physics: {
+		default: "arcade",
+		arcade: {
+		    debug: false,
+		}
+	    },
 	});
     }
 
@@ -51,6 +54,35 @@ function renderButton(isOpen, buttonClickFn) {
     return <button className="PhaserGameInitButton" onClick={buttonClickFn}>
       {isOpen? "Hide Game": "Show Game"}
     </button>;
+}
+
+class PhaserGameScene extends Phaser.Scene {
+    constructor() {
+	super({
+	    key: "PhaserGameScene",
+	});
+    }
+
+    // can accept params passed from game via 'scene.start'
+    init(/** params */) {
+    }
+
+    // caches loading assets. called when scene objects are created
+    preload() {
+	this.load.spritesheet("knuckles", "knuckles.png", {
+	    frameWidth: 32,
+	    frameHeight: 40,
+	});
+    }
+
+    // creates main game objects. called when assets are loaded
+    create() {
+	this.actualPlayer = this.add.sprite(30, 40, "knuckles");
+    }
+
+    update(/** time */) {
+	// todo: implement per-tick behavior
+    }
 }
 
 export default PhaserGame;
