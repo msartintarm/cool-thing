@@ -17,8 +17,16 @@
     margin-top: -105px;
 }
 
-.PhaserContainer {
+.PhaserCanvasContainerClosed,
+.PhaserCanvasContainerOpen {
+    transition-property: width, height;
+    transition-duration: 1.0s, 2.0s;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.PhaserCanvasContainerOpen {
     width: 800px;
     height: 600px;
-    margin: 10px auto;
 }

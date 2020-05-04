@@ -31,7 +31,8 @@
 }
 
 .WrapperBanner {
-    /*    display: block; */
+    transition-property: width, height;
+    transition-duration: 1.2s, 0.6s;
 }
 
 .WrapperRepeat {    

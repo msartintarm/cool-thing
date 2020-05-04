@@ -67,10 +67,9 @@ class Wrapper extends Component {
 	// don't apply width to portion which repeats horizontally
 	const appliedX = repeat? "": sizeX;
 	return <img className={`${IMAGE_CLASS}${repeat? " WrapperRepeat": ""}`}
+	style={{width: appliedX, height: sizeY}}
 	alt=""
 	src={content}
-	width={appliedX}
-	height={sizeY}
 	onLoad={this.checkIfImagesHaveLoaded_}
 	/>;
     }
