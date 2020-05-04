@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react"
 
-class About extends Component {
+export default class About extends PureComponent {
     render() {
 	return (
 	    <div>
@@ -12,8 +12,6 @@ class About extends Component {
 		<a href="linkedin.com/mst">linkedin.com/mikest</a>
 	      </p>
 	    </div>
-	);
+	)
     }
 }
-
-export default About;

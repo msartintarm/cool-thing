@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react"
 
-class Intro extends Component {
+export default class Intro extends PureComponent {
     render() {
 	return (
 	    <div>
@@ -8,8 +8,6 @@ class Intro extends Component {
 		Hello there folks, welcome to tarm.info!
 	      </p>
 	    </div>
-	);
+	)
     }
 }
-
-export default Intro;

@@ -1,15 +1,20 @@
-import React, {Component} from "react";
-import Unity, {UnityContent} from "react-unity-webgl";
-import './UnityGame.css';
+import React, {PureComponent} from "react"
+import Unity, {UnityContent} from "react-unity-webgl"
+import './UnityGame.css'
 
-class UnityGame extends Component {
-
-    constructor(props) {
-	super(props);
-	this.unityContent_ = new UnityContent(
+type UnityPropsType = {
+    isOpen: boolean
+    expandFn: () => void
+}
+type UnityStateType = {}
+export default class UnityGame extends PureComponent<UnityPropsType, UnityStateType> {
+    unityContent: UnityContent
+    constructor(props: UnityPropsType) {
+	super(props)
+	this.unityContent = new UnityContent(
 	    "unity/web_build.json",
-	    "unity/UnityLoader.js"
-	);
+	    "unity/UnityLoader.js",
+	)
     }
 
     render() {
@@ -19,30 +24,27 @@ class UnityGame extends Component {
 	      <p>Welcome to the game!</p>
 	    {renderButton(this.props.isOpen, this.props.expandFn)}
 	    </div>
-	    {this.props.isOpen && renderGame(this.unityContent_)}
+	    {this.props.isOpen && renderGame(this.unityContent)}
 	      <p>This is a short demo written in Unity and compiled to WebAssembly.</p>
 	      <p>Control "5" using the arrow keys, get the dollar bill, and use your mighty scissors to push the creeps off the edge! To be continued...</p>
 	    </div>
-	);
+	)
     }
 
     componentWillUnmount() {
-	this.unityContent_.remove();
+	this.unityContent.remove()
     }
 }
 
-function renderButton(isOpen, buttonClickFn) {
-    const buttonText = isOpen? "Hide Game": "Show Game";
+function renderButton(isOpen: boolean, buttonClickFn: () => void) {
+    const buttonText = isOpen? "Hide Game": "Show Game"
     return <button className="UnityGameInitButton" onClick={buttonClickFn}>
       {buttonText}
-    </button>;
+    </button>
 }
 
-function renderGame(unityContent) {
+function renderGame(unityContent: UnityContent) {
     return <div className="UnityContainer">
       <Unity unityContent={unityContent} />
-    </div>;
+    </div>
 }
-
-export default UnityGame;
- 
